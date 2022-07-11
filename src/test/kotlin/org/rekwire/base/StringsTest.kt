@@ -1,10 +1,10 @@
-package org.mtrojahn
+package org.rekwire.base
 
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
 import org.junit.jupiter.api.Test
 
-internal class RekwireStringTests {
+internal class StringsTest {
 
     @Test
     fun `string gt success`() {
@@ -17,7 +17,7 @@ internal class RekwireStringTests {
         val exception = assertFailsWith<IllegalArgumentException> {
             "foo" minLen 4
         }
-        assertEquals("Expected a string with a minimal length of 4.", exception.message)
+        assertEquals("String length should be at least 4", exception.message)
     }
 
     @Test
@@ -31,7 +31,7 @@ internal class RekwireStringTests {
         val exception = assertFailsWith<IllegalArgumentException> {
             "foo" maxLen 2
         }
-        assertEquals("Expected a string with a maximum length of 2.", exception.message)
+        assertEquals("String length should be at most 2", exception.message)
     }
 
     @Test
@@ -45,7 +45,7 @@ internal class RekwireStringTests {
         val exception = assertFailsWith<IllegalArgumentException> {
             "foo" match "bar"
         }
-        assertEquals("Expected `foo` to match `bar`.", exception.message)
+        assertEquals("String should match `bar`", exception.message)
     }
 
 }

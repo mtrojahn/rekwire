@@ -1,17 +1,18 @@
-package org.mtrojahn
+package org.rekwire.base
 
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
 import org.junit.jupiter.api.Test
 
-internal class RekwireNumberTests {
+internal class NumbersTest {
+
 
     /**
      * GREATER THAN TESTS
      */
     @Test
     fun `int gt success`() {
-        1 gt 0
+        1  gt 0
     }
 
     @Test
