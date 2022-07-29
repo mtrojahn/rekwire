@@ -16,18 +16,6 @@ infix fun <T : Number> T.gt(other: T): T {
     return this
 }
 
-fun <T: Number> T.gt(other: T, message: String): T {
-    when (this) {
-        is Byte -> require(this > other as Byte) { message }
-        is Double -> require(this > other as Double) { message }
-        is Float -> require(this > other as Float) { message }
-        is Int -> require(this > other as Int) { message }
-        is Long -> require(this > other as Long) { message }
-        is Short -> require(this > other as Short) { message }
-    }
-    return this
-}
-
 /**
  * Requires the number to be lower than the [other]
  */
@@ -40,18 +28,6 @@ infix fun <T : Number> T.lt(other: T): T {
         is Int -> require(this < other as Int) { exceptionMessage }
         is Long -> require(this < other as Long) { exceptionMessage }
         is Short -> require(this < other as Short) { exceptionMessage }
-    }
-    return this
-}
-
-fun <T : Number> T.lt(other: T, message: String): T {
-    when (this) {
-        is Byte -> require(this < other as Byte) { message }
-        is Double -> require(this < other as Double) { message }
-        is Float -> require(this < other as Float) { message }
-        is Int -> require(this < other as Int) { message }
-        is Long -> require(this < other as Long) { message }
-        is Short -> require(this < other as Short) { message }
     }
     return this
 }
@@ -72,18 +48,6 @@ infix fun <T : Number> T.gte(other: T): T {
     return this
 }
 
-fun <T : Number> T.gte(other: T, message: String): T {
-    when (this) {
-        is Byte -> require(this >= other as Byte) { message }
-        is Double -> require(this >= other as Double) { message }
-        is Float -> require(this >= other as Float) { message }
-        is Int -> require(this >= other as Int) { message }
-        is Long -> require(this >= other as Long) { message }
-        is Short -> require(this >= other as Short) { message }
-    }
-    return this
-}
-
 /**
  * Requires the number to be lower or equal to the [other]
  */
@@ -96,18 +60,6 @@ infix fun <T : Number> T.lte(other: T): T {
         is Int -> require(this <= other as Int) { exceptionMessage }
         is Long -> require(this <= other as Long) { exceptionMessage }
         is Short -> require(this <= other as Short) { exceptionMessage }
-    }
-    return this
-}
-
-fun <T : Number> T.lte(other: T, message: String): T {
-    when (this) {
-        is Byte -> require(this <= other as Byte) { message }
-        is Double -> require(this <= other as Double) { message }
-        is Float -> require(this <= other as Float) { message }
-        is Int -> require(this <= other as Int) { message }
-        is Long -> require(this <= other as Long) { message }
-        is Short -> require(this <= other as Short) { message }
     }
     return this
 }
