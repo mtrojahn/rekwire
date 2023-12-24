@@ -4,7 +4,7 @@ plugins {
     kotlin("jvm") version "1.7.0"
 }
 
-group = "org.mtrojahn"
+group = "org.rekwire"
 version = "0.1"
 
 repositories {
