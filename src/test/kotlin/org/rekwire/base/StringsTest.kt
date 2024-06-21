@@ -45,7 +45,45 @@ internal class StringsTest {
         val exception = assertFailsWith<IllegalArgumentException> {
             "foo" match "bar"
         }
-        assertEquals("String should match `bar`", exception.message)
+        assertEquals("String should match 'bar'", exception.message)
     }
 
+    @Test
+    fun `string eq success`() {
+        "foo" eq "foo"
+    }
+
+    @Test
+    fun `string eq fail`() {
+        val exception = assertFailsWith<IllegalArgumentException> {
+            "foo" eq "bar"
+        }
+        assertEquals("String should be equal to 'bar'", exception.message)
+    }
+
+    @Test
+    fun `string includes success`() {
+        "foo" includes  "o"
+    }
+
+    @Test
+    fun `string includes fail`() {
+        val exception = assertFailsWith<IllegalArgumentException> {
+            "foo" includes  "b"
+        }
+        assertEquals("String should include 'b'", exception.message)
+    }
+
+    @Test
+    fun `string neq success`() {
+        "foo" neq "bar"
+    }
+
+    @Test
+    fun `string neq fail`() {
+        val exception = assertFailsWith<IllegalArgumentException> {
+            "foo" neq "foo"
+        }
+        assertEquals("String should be different from 'foo'", exception.message)
+    }
 }

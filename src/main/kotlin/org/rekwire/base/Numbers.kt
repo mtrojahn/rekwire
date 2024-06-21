@@ -63,3 +63,35 @@ infix fun <T : Number> T.lte(other: T): T {
     }
     return this
 }
+
+/**
+ * Requires the number to be equal to the [other]
+ */
+infix fun <T : Number> T.eq(other: T): T {
+    val exceptionMessage = "Expected $this to be equal to $other."
+    when (this) {
+        is Byte -> require(this == other as Byte) { exceptionMessage }
+        is Double -> require(this == other as Double) { exceptionMessage }
+        is Float -> require(this == other as Float) { exceptionMessage }
+        is Int -> require(this == other as Int) { exceptionMessage }
+        is Long -> require(this == other as Long) { exceptionMessage }
+        is Short -> require(this == other as Short) { exceptionMessage }
+    }
+    return this
+}
+
+/**
+ * Requires the number to be different from the [other]
+ */
+infix fun <T : Number> T.neq(other: T): T {
+    val exceptionMessage = "Expected $this to be different from $other."
+    when (this) {
+        is Byte -> require(this != other as Byte) { exceptionMessage }
+        is Double -> require(this != other as Double) { exceptionMessage }
+        is Float -> require(this != other as Float) { exceptionMessage }
+        is Int -> require(this != other as Int) { exceptionMessage }
+        is Long -> require(this != other as Long) { exceptionMessage }
+        is Short -> require(this != other as Short) { exceptionMessage }
+    }
+    return this
+}

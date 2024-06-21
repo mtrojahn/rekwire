@@ -345,4 +345,169 @@ internal class NumbersTest {
         }
         assertEquals("Expected 1 to be lower than or equal to 0.", exception.message)
     }
+
+    /**
+     * EQUAL TESTS
+     */
+
+    @Test
+    fun `int eq success`() {
+        1 eq 1
+    }
+
+    @Test
+    fun `int eq fail`() {
+        val exception = assertFailsWith<IllegalArgumentException> {
+            1 eq 2
+        }
+        assertEquals("Expected 1 to be equal to 2.", exception.message)
+    }
+
+    @Test
+    fun `byte eq success`() {
+        1.toByte() eq 1.toByte()
+    }
+
+    @Test
+    fun `byte eq fail`() {
+        val exception = assertFailsWith<IllegalArgumentException> {
+            1.toByte() eq 2.toByte()
+        }
+        assertEquals("Expected 1 to be equal to 2.", exception.message)
+    }
+
+    @Test
+    fun `double eq success`() {
+        1.0 eq 1.0
+    }
+
+    @Test
+    fun `double eq fail`() {
+        val exception = assertFailsWith<IllegalArgumentException> {
+            1.0 eq 2.0
+        }
+        assertEquals("Expected 1.0 to be equal to 2.0.", exception.message)
+    }
+
+    @Test
+    fun `float eq success`() {
+        1.0f eq 1.0f
+    }
+
+    @Test
+    fun `float eq fail`() {
+        val exception = assertFailsWith<IllegalArgumentException> {
+            1.0f eq 2.0f
+        }
+        assertEquals("Expected 1.0 to be equal to 2.0.", exception.message)
+    }
+
+    @Test
+    fun `long eq success`() {
+        1L eq 1L
+    }
+
+    @Test
+    fun `long eq fail`() {
+        val exception = assertFailsWith<IllegalArgumentException> {
+            1L eq 2L
+        }
+        assertEquals("Expected 1 to be equal to 2.", exception.message)
+    }
+
+    @Test
+    fun `short eq success`() {
+        1.toShort() eq 1.toShort()
+    }
+
+    @Test
+    fun `short eq fail`() {
+        val exception = assertFailsWith<IllegalArgumentException> {
+            1.toShort() eq 2.toShort()
+        }
+        assertEquals("Expected 1 to be equal to 2.", exception.message)
+    }
+
+    /**
+     * NOT EQUAL TESTS
+     */
+
+    @Test
+    fun `int neq success`() {
+        1 neq 2
+    }
+
+    @Test
+    fun `int neq fail`() {
+        val exception = assertFailsWith<IllegalArgumentException> {
+            1 neq 1
+        }
+        assertEquals("Expected 1 to be different from 1.", exception.message)
+    }
+
+    @Test
+    fun `byte neq success`() {
+        1.toByte() neq 2.toByte()
+    }
+
+    @Test
+    fun `byte neq fail`() {
+        val exception = assertFailsWith<IllegalArgumentException> {
+            1.toByte() neq 1.toByte()
+        }
+        assertEquals("Expected 1 to be different from 1.", exception.message)
+    }
+
+    @Test
+    fun `double neq success`() {
+        1.0 neq 2.0
+    }
+
+    @Test
+    fun `double neq fail`() {
+        val exception = assertFailsWith<IllegalArgumentException> {
+            1.0 neq 1.0
+        }
+        assertEquals("Expected 1.0 to be different from 1.0.", exception.message)
+    }
+
+    @Test
+    fun `float neq success`() {
+        1.0f neq 2.0f
+    }
+
+    @Test
+    fun `float neq fail`() {
+        val exception = assertFailsWith<IllegalArgumentException> {
+            1.0f neq 1.0f
+        }
+        assertEquals("Expected 1.0 to be different from 1.0.", exception.message)
+    }
+
+    @Test
+    fun `long neq success`() {
+        1L neq 2L
+    }
+
+    @Test
+    fun `long neq fail`() {
+        val exception = assertFailsWith<IllegalArgumentException> {
+            1L neq 1L
+        }
+        assertEquals("Expected 1 to be different from 1.", exception.message)
+    }
+
+    @Test
+    fun `short neq success`() {
+        1.toShort() neq 2.toShort()
+    }
+
+    @Test
+    fun `short neq fail`() {
+        val exception = assertFailsWith<IllegalArgumentException> {
+            1.toShort() neq 1.toShort()
+        }
+        assertEquals("Expected 1 to be different from 1.", exception.message)
+    }
+
 }

@@ -20,6 +20,30 @@ infix fun String.maxLen(max: Int): String {
  * Requires the string to match the given [regex]
  */
 infix fun String.match(regex: String): String {
-    require(regex.toRegex().matches(this)) { "String should match `$regex`" }
+    require(regex.toRegex().matches(this)) { "String should match '$regex'" }
+    return this
+}
+
+/**
+ * Requires the string to be equal to the [other]
+ */
+infix fun String.eq(other: String): String {
+    require(this == other) { "String should be equal to '$other'" }
+    return this
+}
+
+/**
+ * Requires the string to be different from the [other]
+ */
+infix fun String.neq(other: String): String {
+    require(this != other) { "String should be different from '$other'" }
+    return this
+}
+
+/**
+ * Requires the string to contain the [other]
+ */
+infix fun String.includes(other: String): String {
+    require(this.contains(other)) { "String should include '$other'" }
     return this
 }
