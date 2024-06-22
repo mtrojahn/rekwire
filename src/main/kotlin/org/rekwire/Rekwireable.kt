@@ -37,97 +37,110 @@ class RekwireContext {
     /** STRINGS **/
     infix fun KProperty<String>.match(regex: String): KProperty<String> {
         rules.add {
-            runCatching { this.call() match regex }
-                .onFailure { errors.add("Property '${this.name}' should match '$regex'") }
+            val value = this.call()
+            runCatching { value match regex }
+                .onFailure { exception -> errors.add("Property '${this.name}', value: '${value}': ${exception.message}") }
         }
         return this
     }
 
     infix fun KProperty<String>.minLen(min: Int): KProperty<String> {
         rules.add {
-            runCatching { this.call() minLen min }
-                .onFailure { errors.add("Length of '${this.name}' should be at least $min") }
+            val value = this.call()
+            runCatching { value minLen min }
+                .onFailure { exception -> errors.add("Property '${this.name}', value: '${value}': ${exception.message}") }
         }
         return this
     }
 
     infix fun KProperty<String>.maxLen(max: Int): KProperty<String> {
         rules.add {
-            runCatching { this.call() maxLen max }
-                .onFailure { errors.add("Length of '${this.name}' should be at most $max") }
+            val value = this.call()
+            runCatching { value maxLen max }
+                .onFailure { exception -> errors.add("Property '${this.name}', value: '${value}': ${exception.message}") }
         }
         return this
     }
 
     infix fun KProperty<String>.eq(other: String): KProperty<String> {
         rules.add {
-            runCatching { this.call() eq other }
-                .onFailure { errors.add("Property '${this.name}' should be equal to $other") }
+            val value = this.call()
+            runCatching { value eq other }
+                .onFailure { exception -> errors.add("Property '${this.name}', value: '${value}': ${exception.message}") }
         }
         return this
     }
 
     infix fun KProperty<String>.neq(other: String): KProperty<String> {
         rules.add {
-            runCatching { this.call() neq other }
-                .onFailure { errors.add("Property '${this.name}' should be different from $other") }
+            val value = this.call()
+            runCatching { value neq other }
+                .onFailure { exception -> errors.add("Property '${this.name}', value: '${value}': ${exception.message}") }
         }
         return this
     }
 
     infix fun KProperty<String>.includes(other: String): KProperty<String> {
         rules.add {
-            runCatching { this.call() includes other }
-                .onFailure { errors.add("Property '${this.name}' should include '$other'") }
+            val value = this.call()
+            runCatching { value includes other }
+                .onFailure { exception -> errors.add("Property '${this.name}', value: '${value}': ${exception.message}") }
         }
         return this
     }
 
     /** NUMBERS **/
+
     infix fun KProperty<Number>.gt(other: Number): KProperty<Number> {
         rules.add {
-            runCatching { this.call() gt other }
-                .onFailure { errors.add("Property '${this.name}' should be greater than $other") }
+            val value = this.call()
+            runCatching { value gt other }
+                .onFailure { exception -> errors.add("Property '${this.name}', value: '${value}': ${exception.message}") }
         }
         return this
     }
 
     infix fun KProperty<Number>.lt(other: Number): KProperty<Number> {
         rules.add {
-            runCatching { this.call() lt other }
-                .onFailure { errors.add("Property '${this.name}' should be lower than $other") }
+            val value = this.call()
+            runCatching { value lt other }
+                .onFailure { exception -> errors.add("Property '${this.name}', value: '${value}': ${exception.message}") }
         }
         return this
     }
 
     infix fun KProperty<Number>.gte(other: Number): KProperty<Number> {
         rules.add {
-            runCatching { this.call() gte other }
-                .onFailure { errors.add("Property '${this.name}' should be greater or equal to $other") }
+            val value = this.call()
+            runCatching { value gte other }
+                .onFailure { exception -> errors.add("Property '${this.name}', value: '${value}': ${exception.message}") }
         }
         return this
     }
 
     infix fun KProperty<Number>.lte(other: Number): KProperty<Number> {
         rules.add {
-            runCatching { this.call() lte other }
-                .onFailure { errors.add("Property '${this.name}' should be lower or equal to $other") }
+            val value = this.call()
+            runCatching { value lte other }
+                .onFailure { exception -> errors.add("Property '${this.name}', value: '${value}': ${exception.message}") }
         }
         return this
     }
 
     infix fun KProperty<Number>.eq(other: Number): KProperty<Number> {
         rules.add {
-            runCatching { this.call() eq other }
-                .onFailure { errors.add("Property '${this.name}' should be equal to $other") }
+            val value = this.call()
+            runCatching { value eq other }
+                .onFailure { exception -> errors.add("Property '${this.name}', value: '${value}': ${exception.message}") }
         }
         return this
     }
 
     infix fun KProperty<Number>.neq(other: Number): KProperty<Number> {
         rules.add {
-            runCatching { this.call() neq other }
-                .onFailure { errors.add("Property '${this.name}' should be different from $other") }
+            val value = this.call()
+            runCatching { value neq other }
+                .onFailure { exception -> errors.add("Property '${this.name}', value: '${value}': ${exception.message}") }
         }
         return this
     }

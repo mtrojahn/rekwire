@@ -60,4 +60,20 @@ internal class DataClassUsageTests {
         }
         exception.errors.size eq 4
     }
+
+    @Test
+    fun `should fail match`() {
+        data class Person(val name: String): Rekwireable() {
+            init {
+                rekwire {
+                    ::name match "[a-zA-Z]+ [a-zA-Z]+"
+                }
+            }
+        }
+        val exception = assertFailsWith<RekwireValidationException> {
+            Person("Bart Simpson 123")
+        }
+        exception.errors.size eq 1
+        exception.errors[0] includes "Property 'name'"
+    }
 }
