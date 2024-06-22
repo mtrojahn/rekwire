@@ -17,6 +17,9 @@ import org.rekwire.startingWith
 import kotlin.reflect.KProperty
 import kotlin.runCatching
 
+/**
+ * Base class for Rekwireable data classes.
+ */
 abstract class Rekwireable {
 
     protected fun rekwire(block: RekwireContext.() -> Unit) {
@@ -26,6 +29,9 @@ abstract class Rekwireable {
     }
 }
 
+/**
+ * Context for Rekwireable data classes.
+ */
 class RekwireContext {
 
     private val rules = mutableListOf<() -> Unit>()

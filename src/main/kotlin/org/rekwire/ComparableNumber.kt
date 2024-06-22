@@ -1,5 +1,8 @@
 package org.rekwire
 
+/**
+ * A class that wraps Kotlin's Number class and implements the Comparable interface.
+ */
 class ComparableNumber<T : Number>(private val value: T) : Comparable<ComparableNumber<T>> {
 
     override fun compareTo(other: ComparableNumber<T>): Int {
