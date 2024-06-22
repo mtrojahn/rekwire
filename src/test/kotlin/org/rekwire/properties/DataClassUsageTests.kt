@@ -8,8 +8,8 @@ import org.rekwire.base.includes
 import kotlin.test.assertFailsWith
 
 internal class DataClassUsageTests {
-
-    // need better tests for this
+    // This test is just to show how to use Rekwireable in a data class
+    // also how to use the DSL to assert tests
 
     @Test
     fun `should pass`() {
