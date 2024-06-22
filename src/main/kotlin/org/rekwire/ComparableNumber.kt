@@ -1,4 +1,4 @@
-package org.rekwire.base
+package org.rekwire
 
 class ComparableNumber<T : Number>(private val value: T) : Comparable<ComparableNumber<T>> {
 
