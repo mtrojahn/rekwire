@@ -17,7 +17,7 @@ import org.rekwire.startingWith
 import kotlin.reflect.KProperty
 
 /**
- * Base class for Rekwireable data classes.
+ * Base class for Rekwireable classes.
  */
 abstract class Rekwireable {
 
@@ -32,6 +32,10 @@ abstract class Rekwireable {
         return RekwireProperty(initialValue, context, block)
     }
 }
+
+/**
+ * Property delegate for Rekwireable classes.
+ */
 
 class RekwireProperty<T>(
     private var value: T,
@@ -57,7 +61,7 @@ class RekwireProperty<T>(
 }
 
 /**
- * Context for Rekwireable data classes.
+ * Context for Rekwireable classes.
  */
 class RekwireContext {
 
