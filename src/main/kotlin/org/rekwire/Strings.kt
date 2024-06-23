@@ -15,6 +15,7 @@ infix fun String.maxLen(max: Int): String {
     require(this.length <= max) { "'$this' should be at most $max characters long." }
     return this
 }
+
 /**
  * Requires the string to match the given [regex]
  */

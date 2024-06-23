@@ -5,6 +5,7 @@ import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
 
 internal class StringsExceptionTest {
+
     @Test
     fun `should fail minimal length check`() {
         val exception = assertFailsWith<IllegalArgumentException> {

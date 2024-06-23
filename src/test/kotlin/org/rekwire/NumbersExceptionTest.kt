@@ -5,6 +5,7 @@ import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
 
 internal class NumbersExceptionTest {
+
     @Test
     fun `integer - should fail greater than check`() {
         val exception = assertFailsWith<IllegalArgumentException> {

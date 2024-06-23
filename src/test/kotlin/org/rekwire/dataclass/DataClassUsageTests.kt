@@ -6,6 +6,7 @@ import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
 
 internal class DataClassUsageTests {
+
     // This test is just to show how to use Rekwireable in a data class
     // also how to use the DSL to assert tests
     @Test
@@ -61,6 +62,7 @@ internal class DataClassUsageTests {
             |  - Property 'age': 10 should be equal to 20.
             |  - Property 'age': 10 should be different from 10.
             """.trimMargin(),
-            exception.toString())
+            exception.toString()
+        )
     }
 }

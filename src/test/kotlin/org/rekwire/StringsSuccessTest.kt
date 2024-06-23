@@ -3,6 +3,7 @@ package org.rekwire
 import kotlin.test.Test
 
 internal class StringsSuccessTest {
+
     @Test
     fun `should have minimal length`() {
         "" minLen 0

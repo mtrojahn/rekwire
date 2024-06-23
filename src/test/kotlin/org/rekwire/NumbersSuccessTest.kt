@@ -3,6 +3,7 @@ package org.rekwire
 import kotlin.test.Test
 
 internal class NumbersSuccessTest {
+
     @Test
     fun `integer - should pass greater than check`() {
         3 gt 2
