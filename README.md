@@ -39,12 +39,13 @@ Rekwire Validation Failed
 
 ## Usage (delegated properties)
 You can also use Rekwire with delegated properties. In this case, the validation rules will be checked during the setter
-call. If any of the rules fail, an exception will be thrown with a report of the first validation error that occurred.
+call. If any of the rules fail, an exception will be thrown with a report for all the validation rules that failed for
+that property.
 
 ```kotlin
 class Person: Rekwireable() {
     var name: String by rekwire("") {
-        ::name minLen 5 maxLen 100
+        ::name minLen 5 maxLen 100 neq "Bob"
         ::name match "^[a-zA-Z]+ [a-zA-Z]+$"
     }
     var age: Int by rekwire(0) {
@@ -60,6 +61,7 @@ Example of Exception output:
 
 Rekwire Validation Failed
   - Property 'name': 'Bob' should be at least 5 characters long.
+  - Property 'name': 'Bob' should not be equal to 'Bob'.
 */
 
 ```
