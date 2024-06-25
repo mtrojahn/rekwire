@@ -1,6 +1,6 @@
 package org.rekwire.regularclass
 
-import org.rekwire.dataclass.Rekwireable
+import org.rekwire.classes.Rekwireable
 import org.rekwire.exception.RekwireValidationException
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -14,10 +14,10 @@ internal class RegularClassTest {
 
     class Person : Rekwireable() {
 
-        var name: String by rekwireProperty("") {
+        var name: String by rekwire("") {
             ::name minLen 10 maxLen 100 neq "Foo"
         }
-        var age: Int by rekwireProperty(0) {
+        var age: Int by rekwire(0) {
             ::age gt 10
         }
     }

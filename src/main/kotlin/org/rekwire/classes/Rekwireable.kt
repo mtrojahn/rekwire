@@ -1,4 +1,4 @@
-package org.rekwire.dataclass
+package org.rekwire.classes
 
 import org.rekwire.endingWith
 import org.rekwire.eq
@@ -39,7 +39,7 @@ abstract class Rekwireable {
      * @param block Lambda with receiver of type RekwireContext. Defines the rules for the property.
      * @return A RekwireProperty instance with the defined rules.
      */
-    protected fun <T> rekwireProperty(initialValue: T, block: RekwireContext.() -> Unit): RekwireProperty<T> {
+    protected fun <T> rekwire(initialValue: T, block: RekwireContext.() -> Unit): RekwireProperty<T> {
         return RekwireProperty(initialValue, context, block)
     }
 }

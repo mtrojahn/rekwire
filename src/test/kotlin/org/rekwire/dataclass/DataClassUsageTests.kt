@@ -1,5 +1,6 @@
 package org.rekwire.dataclass
 
+import org.rekwire.classes.Rekwireable
 import org.rekwire.exception.RekwireValidationException
 import kotlin.test.Test
 import kotlin.test.assertEquals
