@@ -43,23 +43,17 @@ call. If any of the rules fail, an exception will be thrown with a report of the
 
 ```kotlin
 class Person: Rekwireable() {
-    var name: String by rekwireProperty("") {
+    var name: String by rekwire("") {
         ::name minLen 5 maxLen 100
         ::name match "^[a-zA-Z]+ [a-zA-Z]+$"
     }
-    var age: Int by rekwireProperty(0) {
+    var age: Int by rekwire(0) {
         ::age gte 18 lte 100
     }
 }
-val person = Person().apply { 
-    name = "John Doe"
-    age = 18
-} // No exception thrown
 
-val personFail = Person().apply {
-    name = "Bob"
-    age = 11
-} // Exception thrown
+val person = Person().apply { name = "John Doe"; age = 18 } // No exception thrown
+val personFail = Person().apply { name = "Bob"; age = 11 }  // Exception thrown
 
 /*
 Example of Exception output:
