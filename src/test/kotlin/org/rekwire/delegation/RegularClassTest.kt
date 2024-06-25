@@ -1,4 +1,4 @@
-package org.rekwire.regularclass
+package org.rekwire.delegation
 
 import org.rekwire.classes.Rekwireable
 import org.rekwire.exception.RekwireValidationException
@@ -6,7 +6,7 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
 
-internal class RegularClassTest {
+internal class DelegationTest {
 
     // regular classes can be validated when the property is being set.
     // the downside is that the validation error will not include all validations that failed. also, the initial value
