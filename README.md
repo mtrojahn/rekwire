@@ -6,6 +6,11 @@ a set of validation rules that can be checked during a dataclass instantiation o
 dataclasses, it also provides a full report of all the validation errors that occurred during the instantiation, which
 is useful for ETL processes.
 
+## Disclaimer
+This project is still in the early stages of development and is not ready for production use. The API is subject to
+change and the documentation is incomplete. The repository is public to allow for feedback. I am preparing the 
+repository for its first release in Maven Central.
+
 ## Installation
 Steps to install the project.
 

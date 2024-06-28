@@ -127,7 +127,7 @@ class RekwireContext {
     // The rule is defined as a lambda that takes the value of the property and checks it against a condition.
     // If the condition is not met, an error message is added to the context.
 
-    /** STRINGS **/
+    /* STRINGS */
 
     /**
      * Extension function for KProperty<String> to add a match rule.
@@ -282,7 +282,7 @@ class RekwireContext {
         return this
     }
 
-    /** NUMBERS **/
+    /* NUMBERS */
 
     /**
      * Extension function for KProperty<Number> to add a 'greater than' rule.
