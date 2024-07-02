@@ -12,7 +12,7 @@ class ComparableNumber<T : Number>(private val value: T) : Comparable<Comparable
     /**
      * Compares this number with the specified number for order.
      * Returns zero if this number is equal to the specified other number, a negative number if it's less than other,
-     * or a positive number if it's greater than other.
+     * or a positive number if it's greater than [other].
      *
      * @param other The number to be compared.
      * @return A negative integer, zero, or a positive integer as this number is less than, equal to, or greater than the specified number.
